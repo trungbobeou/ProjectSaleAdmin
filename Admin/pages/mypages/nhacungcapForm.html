@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mama's Fresh Veggie of Admin</title>
+</head>
+
+<body ng-controller="nhacungcapForm">
+    <section ng-include="'../../pages/content-wrapper.html'"></section>
+    <!-- Main content Begin -->
+    <section class="content">
+        <div class="container-fluid">
+            <!--Thêm nhân viên-->
+            <div class="row" id="ThemNhaCC">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Thêm nhà cung cấp</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <form role="form" id="frmNhaCungCap">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Tên nhà cung cấp</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-archive"></i></span>
+                                                </div>
+                                                <input type="text" id="txtTenNhaCC" name="txtTenNhaCC" class="form-control" placeholder="Nhập tên của nhà cung cấp" required>
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Số điện thoại nhà cung cấp</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                                </div>
+                                                <input type="text" id="txtSdtNhaCC" name="txtSdtNhaCC" class="form-control" data-inputmask='"mask": "099 999 9999"' data-mask placeholder="Nhập điện thoại của nhà cung cấp" required>
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Email nhà cung cấp</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                                </div>
+                                                <input type="text" id="txtEmailNhaCC" name="txtEmailNhaCC" class="form-control" placeholder="Nhập Email của nhà cung cấp" required>
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Ngày kí hợp đồng:</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" id="txtNgayKiHopDongNhaCC" name="txtNgayKiHopDongNhaCC" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask placeholder="Nhập ngày kí hợp đồng" required>
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Ngày kết thúc hợp đồng:</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" id="txtNgayKetThucHopDongNhaCC" name="txtNgayKetThucHopDongNhaCC" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask placeholder="Nhập ngày kết thúc hợp đồng" required>
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Địa chỉ nhà cung cấp</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                                </div>
+                                                <input type="text" id="txtDiaChiNhaCC" name="txtDiaChiNhaCC" class="form-control" placeholder="nhập địa của nhà cung cấp" required>
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Ghi chú thêm</label>
+                                            <div class="input-group">
+                                                <textarea class="form-control" id="txtGhiChuNhaCC" rows="3" placeholder="Ghi chú thêm (nếu có)"></textarea>
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.row -->
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" id="btnThemNhaCungCap" class="btn btn-success" ng-click="btnThemNhaCungCap();"><i class="fas fa-save"></i> Thêm nhà cung cấp</button>
+                            <button type="submit" id="btnSuaNhaCungCap" class="btn btn-danger" ng-click="btnSuaNhaCungCap();"> <i class="fas fa-edit"></i> Sửa nhà cung cấp</button>
+                            <button type="submit" id="btnNhapLaiNhaCungCap" class="btn btn-primary" ng-click="btnNhapLaiNhaCungCap();"><i class="fas fa-circle-notch"></i> Nhập lại</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <!--Thống kê nhân viên-->
+            <div class="row" id="BangNhaCC">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-success">
+                        <div class="card-header">
+                            <h3 class="card-title">Danh sách nhà cung cấp</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body mt-1">
+                            <table id="tblDanhSachNhaCungCap" class="table table-bordered table-hover" ng-click="tablesclick();">
+                                <thead>
+                                    <tr>
+                                        <th>Rendering engine</th>
+                                        <th>Browser</th>
+                                        <th>Platform(s)</th>
+                                        <th>Engine version</th>
+                                        <th>CSS grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 4.0
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td> 4</td>
+                                        <td>X</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 5.0
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td>5</td>
+                                        <td>C</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gecko</td>
+                                        <td>Firefox 1.5</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gecko</td>
+                                        <td>Firefox 2.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Rendering engine</th>
+                                        <th>Browser</th>
+                                        <th>Platform(s)</th>
+                                        <th>Engine version</th>
+                                        <th>CSS grade</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button id="btnLamMoiTblNhaCungCap" class="btn btn-success text-white" ng-click="btnLamMoiTblNhaCungCap();">
+                                        <span class="spinner-border text-default spinner-border-sm"></span><br /> Làm mới
+                                    </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Main content End -->
+</body>
+
+</html>

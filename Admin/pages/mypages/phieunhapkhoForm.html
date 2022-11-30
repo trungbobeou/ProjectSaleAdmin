@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mama's Fresh Veggie of Admin</title>
+</head>
+
+<body>
+    <section ng-include="'../../pages/content-wrapper.html'"></section>
+    <!-- Main content Begin -->
+    <section class="content">
+        <div class="container-fluid">
+            <!--Thêm nhân viên-->
+            <div class="row" id="ThemPhieuNhapKho">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                Phiếu nhập kho
+                            </h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <form role="form" id="frmPhieuNhapKho">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Loại sản phẩm</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text" for="inputGroupSelect01"><i class="fas fa-apple-alt"></i></label>
+                                                </div>
+                                                <select class="form-control select2" id="cboLoaiSPNhapKho" name="cboLoaiSPNhapKho" required> 
+                                                   
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Tên sản phẩm</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text" for="inputGroupSelect01"><i class="fas fa-apple-alt"></i></label>
+                                                </div>
+                                                <select class="form-control select2" id="cboTenSPNhapKho" name="cboTenSPNhapKho" required> 
+                                                   
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Số lượng nhập</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-sort-numeric-up"></i></span>
+                                                </div>
+                                                <input type="number" class="form-control" id="txtSoLuongSPNhapKho" name="txtSoLuongSPNhapKho" placeholder="Nhập số lượng muốn nhập kho" min="1" required>
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Giá nhập kho sản phẩm</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-money-bill"></i></span>
+                                                </div>
+                                                <input type="number" class="form-control" id="txtGiaSPNhapKho" name="txtGiaSPNhapKho" placeholder="Nhập giá nhập kho" required>
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Giá xuất kho sản phẩm</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-money-bill"></i></span>
+                                                </div>
+                                                <input type="number" class="form-control" id="txtGiaSPXuatKho" name="txtGiaSPXuatKho" placeholder="Nhập giá xuất kho" required>
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Tình trạng sản phẩm</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text" for="inputGroupSelect01"><i class="fas fa-info-circle"></i></label>
+                                                </div>
+                                                <select class="form-control select2" id="cboTinhTrangSPPhieuNhapKho" name="cboTinhTrangSPPhieuNhapKho" required> 
+                                                   
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.row -->
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button id="btnThemPhieuNhapKho" class="btn btn-success" ng-click="btnThemPhieuNhapKho();"><i class="fas fa-save"></i> Thêm phiếu nhập kho</button>
+                            <button id="btnSuaPhieuNhapKho" class="btn btn-danger" ng-click="btnSuaPhieuNhapKho();"> <i class="fas fa-edit"></i> Sửa phiếu nhập kho</button>
+                            <button id="btnNhapLaiPhieuNhapKho" class="btn btn-primary" ng-click="btnNhapLaiPhieuNhapKho();"><i class="fas fa-circle-notch"></i> Nhập lại</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+
+            <!--Thống kê nhân viên-->
+            <div class="row" id="BangPhieuNhapKho">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-success">
+                        <div class="card-header">
+                            <h3 class="card-title">Lịch sử nhập kho</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body mt-1">
+                            <table id="tblDanhSachPhieuNhapKho" class="table table-bordered table-hover" ng-click="tablesclick();">
+                                <thead>
+                                    <tr>
+                                        <th>Rendering engine</th>
+                                        <th>Browser</th>
+                                        <th>Platform(s)</th>
+                                        <th>Engine version</th>
+                                        <th>CSS grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 4.0
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td> 4</td>
+                                        <td>X</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 5.0
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td>5</td>
+                                        <td>C</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gecko</td>
+                                        <td>Firefox 1.5</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gecko</td>
+                                        <td>Firefox 2.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gecko</td>
+                                        <td>Firefox 2.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gecko</td>
+                                        <td>Firefox 2.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gecko</td>
+                                        <td>Firefox 2.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gecko</td>
+                                        <td>Firefox 2.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gecko</td>
+                                        <td>Firefox 2.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gecko</td>
+                                        <td>Firefox 2.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gecko</td>
+                                        <td>Firefox 2.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.8</td>
+                                        <td>A</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Rendering engine</th>
+                                        <th>Browser</th>
+                                        <th>Platform(s)</th>
+                                        <th>Engine version</th>
+                                        <th>CSS grade</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button id="btnLamMoitblPhieuNhapKho" class="btn btn-success text-white" ng-click="btnLamMoitblPhieuNhapKho();">
+                                        <span class="spinner-border text-default spinner-border-sm"></span><br /> Làm mới
+                                    </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Main content End -->
+</body>
+
+</html>
